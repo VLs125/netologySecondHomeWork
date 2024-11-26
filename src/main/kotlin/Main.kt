@@ -10,6 +10,8 @@ fun main() {
     likesCount(101)
     likesCount(201)
     likesCount(1001)
+    likesCount(1011)
+    likesCount(10311)
 
 }
 
@@ -17,7 +19,9 @@ fun likesCount(likes: Int) {
     var likes = likes
 
     if (likes in (2..20) || ((likes % 2 == 0) || (likes.toString().toCharArray().size >= 2 && likes.toString()
-            .toCharArray()[likes.toString().length - 1].digitToInt() != 1))
+            .toCharArray()[likes.toString().length - 2].digitToInt() == 1 && likes.toString()
+            .toCharArray()[likes.toString().length - 1].digitToInt() == 1 ) ||likes.toString()
+            .toCharArray()[likes.toString().length - 1].digitToInt() != 1)
     ) {
         println("Понравилось $likes людям")
     } else println("Понравилось $likes человеку")
